@@ -1,0 +1,39 @@
+
+// analogWrite did NOT work with GPIOs 6, 7, 8, 11, and ADC (A0) 
+// (GPIOs 4, 12, 14, 15 have hardware PWM, and the others are by software)
+
+//int LedPin = 14; //D5 Green
+//int LedPin = 12; //D6 Red
+int LedPin = 13; //D7 Blue
+
+void setup() { 
+  pinMode(LedPin, OUTPUT);
+}
+
+void loop() {
+
+  // Turn LED OFF
+  
+  analogWrite(LedPin, 0);   // turn the LED on (HIGH is the voltage level)
+  delay(500);              // wait for a second
+
+  // Turn LED on: 25 Percent Intensity
+
+  analogWrite(LedPin, 255);   // turn the LED on (HIGH is the voltage level)
+  delay(500);              // wait for a second
+
+  // Turn LED on: 25 Percent Intensity
+  
+  analogWrite(LedPin, 512);   // turn the LED on (HIGH is the voltage level)
+  delay(500);              // wait for a second
+
+  // Turn LED on: 75 Percent Intensity
+
+  analogWrite(LedPin, 767);   // turn the LED on (HIGH is the voltage level)
+  delay(500);              // wait for a second
+
+   // Turn LED on: 100 Percent Intensity
+  
+  analogWrite(LedPin, 1023);    // turn the LED off by making the voltage LOW
+  delay(500);              // wait for a second  
+}
